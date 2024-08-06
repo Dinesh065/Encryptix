@@ -540,3 +540,52 @@ footer {
     bottom: 0;
     z-index: 1000;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1500px) {
+    .front-page img{
+        width: 500px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 1290px)
+{
+    .front-page{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .front-page div{
+        width: 80%;
+    }
+    .front-page img{
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 1030px){
+    nav{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .Header{
+        height: auto;
+    }
+}
+
+@media (max-width: 770px){
+    .front-page div{
+        width: 89%;
+    }
+    .front-page h2{
+        font-size: 40px;
+    }
+    .front-page p{
+        font-size: 25px;
+    }
+}
