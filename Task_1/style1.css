@@ -112,10 +112,13 @@ main {
 .front-page img {
     width: 600px;
     max-height: 500px;
-    border: 1px solid black;
+    /* border: 1px solid black;
     border-radius: 177px;
-    box-shadow: 10px 10px 10px rgba(179, 167, 167, 0.3);
-    /* max-width: 100%;               */
+    box-shadow: 10px 10px 10px rgba(179, 167, 167, 0.3); */
+    border: none;
+    border-radius: 27%;
+    box-shadow: 0 10px 10px darkred;
+    margin-bottom: 14px;
 }
 
 .front-page h2 {
@@ -448,7 +451,7 @@ main {
 .logo-item {
     display: flex;
     align-items: center;
-    margin: 10px 0; /* Space between each item */
+    margin: 10px 0;  
 }
 
 .logo-item img {
@@ -541,12 +544,41 @@ footer {
     z-index: 1000;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 1500px) {
     .front-page img{
         width: 500px;
         max-height: 400px;
     }
+}
+
+@media (max-width: 1200px)
+{
+    .contact .container-4{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact .logos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .contact .logos .logo-item{
+        margin-right: 30px;
+    }
+    .contact .logos a, .contact .logos p{
+        font-size: 15px;
+    }
+    .contact .contact-card{
+        width: 60%;
+    }
+    .contact .contact-card {
+        width: 50%;
+    }
+
 }
 
 @media (max-width: 1290px)
@@ -587,5 +619,108 @@ footer {
     }
     .front-page p{
         font-size: 25px;
+    }
+}
+
+@media (max-width: 550px){
+    .front-page img{
+        width: 400px;
+        max-height: 300px;
+    }
+}
+@media (max-width: 440px){
+    .Header h2{
+        margin-right: 60px;
+        text-align: center;
+    }
+    .front-page img{
+        width: 300px;
+        max-height: 300px;
+    }
+    .front-page div{
+        width: 89%;
+    }
+    .front-page h2{
+        font-size: 30px;
+    }
+    .front-page p{
+        font-size: 25px;
+    }
+    .header h1{
+        font-size: 40px;
+    }
+    .header img{
+        width: 50px;
+        height: 40px;
+    }
+    .skills h2{
+        font-size: 20px;
+    }
+    .projects h2{
+        font-size: 20px;
+    }
+    .Resume h2{
+        font-size: 20px;
+    }
+    .skills .container-1{
+        display: flex;
+        flex-direction: column;
+        padding: 3px;
+    }
+    .skills .cards{
+        width: 80%;
+    }
+    .projects .container-2{
+        display: flex;
+        flex-direction: column;
+        /* width: 80%; */
+    }
+    .projects .contents{
+        width: 100%;
+    }
+    .Resume .container-3{
+        width : 90%;
+    }
+    .Resume .container-3 .item{
+        width : 100%;
+    }
+    .Resume .container-3 .item img{
+        width : 100%;
+    }
+    .contact .container-4{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact .logos{
+        padding: 5px;
+        width: 100%;
+        margin-left: 25px;
+    }
+    .contact .logos a, .contact .logos p{
+        font-size: 15px;
+    }
+    .contact .contact-card{
+        width: 90%;
+    }
+}
+@media (max-width: 1435px)
+{
+    .skills .container-1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+    .projects .container-2{
+        display: flex;
+        flex-direction: column;
+    }
+    .projects .contents{
+        width: 100%;
+    }
+    .projects .contents img{
+        width: 100%;
     }
 }

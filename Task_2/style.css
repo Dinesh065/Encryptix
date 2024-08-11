@@ -3,20 +3,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 body {
     background-color: rgb(166, 163, 163);
     position: relative;
-    overflow: hidden;
 }
 
 header {
     background-color: rgba(51, 51, 51, 0.8);
     color: #fff;
     text-align: center;
-    z-index: 2;
-    position: relative;
+    z-index: 1000;
+    width: 100%;
+    top: 0px;
+    position: fixed;
 }
 
 nav {
@@ -26,7 +28,7 @@ nav {
     align-items: center;
     text-align: center;
     padding: 8px;
-    z-index: 2;
+    z-index: 1000;
     position: relative;
 }
 
@@ -39,7 +41,6 @@ nav ul {
     padding: 0;
     overflow: hidden;
     z-index: 2;
-    /* background-color: rgba(51, 51, 51, 0.8); */
 }
 
 nav ul li a {
@@ -86,7 +87,16 @@ nav ul li:hover > ul {
     display: block;
 }
 
-body::before {
+.title {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    color: rgb(252, 239, 60);
+    z-index: 1;
+    margin-top: 70px
+}
+
+.title::before {
     content: "";
     background: url("https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/05/26/Pictures/ac-milan-final-juventus-coppa-italia-semi_cf3f23b2-9f30-11ea-95c6-464eb77020f3.jpg") no-repeat center center/cover;
     position: absolute;
@@ -95,18 +105,7 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: blur(5px); /* Adjust blur effect as needed */
-}
-
-.title {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-}
-
-.title h1 {
-    color: rgb(248, 232, 60);
+    filter: blur(5px);
 }
 
 .slideshow-container {
@@ -130,6 +129,7 @@ body::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .slide:nth-child(1) {
@@ -140,7 +140,7 @@ body::before {
 .slide:nth-child(2) {
     left: 33.33%;
     animation: slide2 9s infinite;
-    z-index: 3; /* Middle image */
+    z-index: 3; 
 }
 
 .slide:nth-child(3) {
@@ -161,4 +161,438 @@ body::before {
 @keyframes slide3 {
     0%, 66%, 100% { opacity: 0; }
     50% { opacity: 1; }
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#home h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    background-color: pink;
+    width: 103%;
+    text-align: center;
+}
+
+#home p {
+    color: #666;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    text-align: center;
+}
+
+#about {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0; 
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    background-color: pink;
+    text-align: center;
+    width: 100%;  
+}
+
+#about p {
+    margin-left: 50px;
+    color: #666;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: none; 
+    width: 94%; 
+}
+
+#about h3 {
+    margin-left: 50px;
+    color: #333;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: none;  
+    width: 100%; 
+}
+
+#introduction, #early-life, #rise-to-stardom {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.img-sec {
+    flex: 1;  
+    margin-right: 10px;  
+    overflow-y: hidden;
+    border: none;
+    box-shadow: 0 10px 10px rgb(76, 84, 86);
+    border-radius: 30px;
+}
+
+.img-sec img {
+    width: 600px;  
+    height: 300px; 
+    object-fit: cover; 
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.card {
+    flex: 2; 
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+    border:none; 
+    border-radius: 30px; 
+    background-color: rgb(255, 209, 250);
+    box-shadow: 0 10px 10px rgb(76, 84, 86);
+    transition: all 0.3s ease;
+}
+
+.img-sec img:hover{
+    transform: scale(1.03);  
+    border-color: rgb(255, 100, 100); 
+}
+
+.card:hover{
+    background-color: rgb(255, 250, 210);  
+    box-shadow: 0 15px 20px rgb(76, 84, 86); 
+    transform: scale(1.02);
+}
+
+#achievements {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0; 
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #F0F0F0;
+}
+
+#achievements h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    background-color: pink;
+}
+
+.achievement-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+    justify-content: space-around;  
+    padding: 30px;
+    z-index: 0;
+}
+
+.sub-card {
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1; 
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgb(76, 84, 86);  
+    background-color: black;  
+    color: #333333; 
+    min-height: 200px;
+    height: 500px;
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-card p, .sub-card h3 {
+    z-index: -2;  
+    position: relative;
+    color: #F5F5F5;
+    font-size: 1.2em;
+    width: 100%; 
+}
+
+.sub-card h3 {
+    color: #fad974;
+}
+
+.sub-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  
+    height: 500px;  
+    z-index: -1;
+    filter: blur(0px);
+    border-radius: 30px; 
+    transition: transform 0.5s ease;  
+}
+
+.sub-card:hover::before {
+    transform: translateY(-1000px);  
+}
+
+/* Background images for each card */
+.sub-card:nth-child(1)::before {
+    background: url("https://rukminim2.flixcart.com/image/850/1000/k5bcscw0/poster/c/y/2/medium-cristiano-ronaldo-euro-uefa-champions-league-hd-poster-original-imafzy7q8y8bmudj.jpeg?q=90&crop=false") no-repeat center center/cover;
+}
+
+.sub-card:nth-child(2)::before {
+    background: url("https://qph.cf2.quoracdn.net/main-qimg-bf21bf2db8e4593a4bc5434e0c905342") no-repeat center center/cover;
+}
+
+.sub-card:nth-child(3)::before {
+    background: url("https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2020/02/1280/1280/2c497f53-07101620Soccer20Euro20201620Portugal.jpg?ve=1&tl=1") no-repeat center center/cover;
+}
+
+#contact {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0; 
+    z-index: 1;
+    position: relative;
+    background-color: #F0F0F0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+#contact h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    background-color: pink;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-card{
+    border:1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(231, 102, 102);
+    padding: 10px;
+    background-color: #F0F0F0;
+    width: 50%;
+
+}
+
+label {
+    margin-top: 10px;
+    color: #817c7c;    
+    text-align: left; 
+    width: 100%; 
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: black;
+    background-color: rgb(249, 216, 216);
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 14px;
+    padding: 10px 20px;
+    border: 1px solid #803636;
+    border-radius: 5px;
+    background-color: rgb(249, 216, 216);
+    color: #803636;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(246, 192, 192);
+    color: white;
+}
+
+.details .contact-info{
+    gap: 20px;  
+    padding: 10px; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+}
+.details .social-media{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.details .email, .details .phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details .email img {
+    width: 80px;  
+    height: 80px;
+    object-fit: contain;
+}
+.details .phone img {
+    width: 40px;  
+    height: 40px;
+    object-fit: contain;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.details p {
+    margin: 0;
+    color: black;
+    font-size: 16px;
+}
+
+.details .linkedin a img {
+    width: 50px;  
+    height: 50px;
+    object-fit: contain;
+    margin-right: 20px;
+    border: 3px solid black;
+    border-radius: 100%;
+}
+.details .github a img {
+    width: 50px;  
+    height: 50px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+footer{
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    z-index: 1000;
+    width: 100%;
+    height: 40px;
+    bottom: 0px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .achievement-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .sub-card {
+        width: 90%; 
+    }
+}
+
+@media (max-width: 1200px) {
+    #about p, #about h3 {
+        margin-left: 20px;  
+        width: 90%;  
+    }
+
+    #introduction, #early-life, #rise-to-stardom {
+        flex-direction: column;  
+        padding: 10px;  
+    }
+
+    .img-sec {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+        width: 100%;  
+    }
+
+    .img-sec img {
+        width: 100%;  
+        height: auto;  
+    }
+
+    .card {
+        width: 100%;  
+        margin: 0 auto;  
+        padding: 20px;  
+    }
+
+    .achievement-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .sub-card {
+        width: 90%; 
+    }
+    
+}
+
+@media (max-width: 778px)
+{
+    .title{
+        margin-top: 100px;
+    }
+}
+@media (max-width: 678px)
+{
+    nav{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .title{
+        margin-top: 120px;
+    }
+}
+@media (max-width: 514px)
+{
+    nav{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .title{
+        margin-top: 120px;
+    }
+    .contact-card{
+        width: 90%;
+    }
 }
