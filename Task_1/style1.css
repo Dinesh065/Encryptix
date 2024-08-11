@@ -20,7 +20,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     height: 40px;
     top: 0;
     z-index: 1000;
@@ -117,7 +117,7 @@ main {
     box-shadow: 10px 10px 10px rgba(179, 167, 167, 0.3); */
     border: none;
     border-radius: 27%;
-    box-shadow: 0 10px 10px darkred;
+    box-shadow: 0 10px 10px #00368b;
     margin-bottom: 14px;
 }
 
@@ -608,6 +608,9 @@ footer {
     .Header{
         height: auto;
     }
+    .front-page{
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 770px){
@@ -621,6 +624,12 @@ footer {
         font-size: 25px;
     }
 }
+@media (max-width: 666px)
+{
+    .front-page {
+        margin-top: 80px;
+    }
+}
 
 @media (max-width: 550px){
     .front-page img{
@@ -632,6 +641,9 @@ footer {
     .Header h2{
         margin-right: 60px;
         text-align: center;
+    }
+    .front-page{
+        margin-top: 120px;
     }
     .front-page img{
         width: 300px;
@@ -702,6 +714,11 @@ footer {
     }
     .contact .contact-card{
         width: 90%;
+    }
+}
+@media (max-width: 376px){
+    .front-page{
+        margin-top: 170px;
     }
 }
 @media (max-width: 1435px)
