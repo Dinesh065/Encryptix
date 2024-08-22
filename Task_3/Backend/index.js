@@ -2,8 +2,8 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from "./utils/dbmongo.js";
 dotenv.config({});
+import connectDB from "./utils/dbmongo.js";
 
 const app = express();
 
